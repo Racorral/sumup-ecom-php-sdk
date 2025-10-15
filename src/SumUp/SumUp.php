@@ -99,11 +99,7 @@ class SumUp
      */
     public function getAuthorizationService(?ApplicationConfigurationInterface $config = null)
     {
-        if (empty($config)) {
-            $cfg = $this->appConfig;
-        } else {
-            $cfg = $config;
-        }
+        $cfg = $config ?? $this->appConfig;
         return new Authorization($this->client, $cfg);
     }
 
@@ -116,11 +112,7 @@ class SumUp
      */
     public function getCheckoutService(?AccessToken $accessToken = null)
     {
-        if (!empty($accessToken)) {
-            $accToken = $accessToken;
-        } else {
-            $accToken = $this->accessToken;
-        }
+        $accToken = $accessToken ?? $this->accessToken;
         return new Checkouts($this->client, $accToken);
     }
 
@@ -133,11 +125,7 @@ class SumUp
      */
     public function getCustomerService(?AccessToken $accessToken = null)
     {
-        if (!empty($accessToken)) {
-            $accToken = $accessToken;
-        } else {
-            $accToken = $this->accessToken;
-        }
+        $accToken = $accessToken ?? $this->accessToken;
         return new Customers($this->client, $accToken);
     }
 
@@ -150,11 +138,7 @@ class SumUp
      */
     public function getTransactionService(?AccessToken $accessToken = null)
     {
-        if (!empty($accessToken)) {
-            $accToken = $accessToken;
-        } else {
-            $accToken = $this->accessToken;
-        }
+        $accToken = $accessToken ?? $this->accessToken;
         return new Transactions($this->client, $accToken);
     }
 
@@ -167,11 +151,7 @@ class SumUp
      */
     public function getMerchantService(?AccessToken $accessToken = null)
     {
-        if (!empty($accessToken)) {
-            $accToken = $accessToken;
-        } else {
-            $accToken = $this->accessToken;
-        }
+        $accToken = $accessToken ?? $this->accessToken;
         return new Merchant($this->client, $accToken);
     }
 
@@ -184,11 +164,7 @@ class SumUp
      */
     public function getPayoutService(?AccessToken $accessToken = null)
     {
-        if (!empty($accessToken)) {
-            $accToken = $accessToken;
-        } else {
-            $accToken = $this->accessToken;
-        }
+        $accToken = $accessToken ?? $this->accessToken;
         return new Payouts($this->client, $accToken);
     }
 
@@ -199,11 +175,7 @@ class SumUp
      */
     public function getCustomService(?AccessToken $accessToken = null)
     {
-        if (!empty($accessToken)) {
-            $accToken = $accessToken;
-        } else {
-            $accToken = $this->accessToken;
-        }
+        $accToken = $accessToken ?? $this->accessToken;
         return new Custom($this->client, $accToken);
     }
 }
