@@ -80,7 +80,7 @@ class SumUp
     {
         if (isset($refreshToken)) {
             $rToken = $refreshToken;
-        } elseif (!isset($refreshToken) && !isset($this->accessToken)) {
+        } else if (!isset($refreshToken) && !isset($this->accessToken)) {
             throw new SumUpConfigurationException('There is no refresh token');
         } else {
             $rToken = $this->accessToken->getRefreshToken();
